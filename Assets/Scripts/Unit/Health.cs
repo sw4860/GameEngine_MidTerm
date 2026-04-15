@@ -2,13 +2,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int maxHP = 100;
-    private int currentHealth;
-
-    private void Start()
-    {
-        currentHealth = maxHP;
-    }
+    [SerializeField] protected int maxHP = 100;
+    protected int currentHealth;
 
     public virtual void TakeDamage(int damage)
     {

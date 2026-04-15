@@ -10,7 +10,10 @@ public class CollisionTrap : MonoBehaviour
         Health health = collision.GetComponent<Health>();
         if (health != null)
         {
-            health.TakeDamage(damage);
+            if (collision.TryGetComponent(out Player player))
+                player.TakeDamage(damage);
+            else
+                health.TakeDamage(damage);
         }
     }
 }

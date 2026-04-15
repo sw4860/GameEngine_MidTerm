@@ -1,8 +1,6 @@
-using NUnit.Framework;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR;
 
 public class Player : Health
 {
@@ -57,6 +55,9 @@ public class Player : Health
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        currentHealth = maxHP;
+        EventManager.OnPlayerHPChanged();
 
         ghostSprites = new SpriteRenderer[ghostPoolSize];
         ghostAlpha = new float[ghostPoolSize];
@@ -223,5 +224,16 @@ public class Player : Health
 
         animator.Play(newState);
         currentState = newState;
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        EventManager.OnPlayerHPChanged?.Invoke();
+    }
+
+    public List<int> GetHealth()
+    {
+        return new List<int> {currentHealth, maxHP};
     }
 }

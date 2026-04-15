@@ -1,16 +1,22 @@
+using System;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private TextMeshProUGUI HpText;
+    [SerializeField] private Image hpBarImage;
+
+    private Player player;
+    void Awake()
     {
-        
+        player = GameObject.FindAnyObjectByType<Player>();
+        EventManager.OnPlayerHPChanged += OnPlayerHPChanged;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnPlayerHPChanged()
     {
-        
+        HpText.text = $"{player.GetHealth()[0]}/{player.GetHealth()[1]}";
     }
 }
