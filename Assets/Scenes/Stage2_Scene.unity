@@ -317,7 +317,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -19
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1042382002, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -325,7 +325,7 @@ SpriteRenderer:
   m_Size: {x: 16, y: 17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!114 &263184859
 MonoBehaviour:
@@ -423,7 +423,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -16
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -430592519, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -431,7 +431,7 @@ SpriteRenderer:
   m_Size: {x: 16, y: 17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!114 &362818984
 MonoBehaviour:
@@ -24261,7 +24261,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -18
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1096680104, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -24269,7 +24269,7 @@ SpriteRenderer:
   m_Size: {x: 16, y: 17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1412046479
 MonoBehaviour:
@@ -24472,7 +24472,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -20
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -44259460, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -24480,7 +24480,7 @@ SpriteRenderer:
   m_Size: {x: 16, y: 17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1644718628
 GameObject:
@@ -24935,8 +24935,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   maxHP: 10
   moveSpeed: 5
+  maxJumpCount: 2
   jumpPower: 5
-  jumpPressTime: 0.4
+  jumpPressTime: 0.3
   dashPower: 20
   dashCooldown: 3
   dashTime: 0.2
@@ -25034,7 +25035,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 72de0c64f2c6a498096698322c976a67, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -25279,7 +25280,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -17
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 899480125, guid: 5fe5454ec8605de43809133b020d1b69, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -25287,7 +25288,7 @@ SpriteRenderer:
   m_Size: {x: 16, y: 17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1972364764
 MonoBehaviour:

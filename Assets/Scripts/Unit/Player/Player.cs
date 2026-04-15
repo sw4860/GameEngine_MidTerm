@@ -8,6 +8,7 @@ public class Player : Health
 {
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private int maxJumpCount = 2;
     [SerializeField] private float jumpPower = 5f;
     [SerializeField] private float jumpPressTime = 0.1f;
     [SerializeField] private float dashPower = 5f;
@@ -27,6 +28,7 @@ public class Player : Health
     private Vector2 moveInput;
 
     private bool isGrounded;
+    private int _jumpCount;
     private bool isJumping;
     private float jumpTimer;
     private bool isDashing;
@@ -68,7 +70,6 @@ public class Player : Health
 
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         if (!isDashing)
             rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
@@ -80,6 +81,7 @@ public class Player : Health
 
         UpdateSprite();
         UpdateGhosts();
+        OnGrounded();
     }
 
     void OnMove(InputValue value)
@@ -87,12 +89,26 @@ public class Player : Health
         moveInput = value.Get<Vector2>();
     }
 
+    void OnGrounded()
+    {
+        if (Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer))
+        {
+            isGrounded = true;
+            if (!isJumping) _jumpCount = 0;
+        }
+        else
+        {
+            isGrounded = false;
+        }
+    }
+
     void OnJump(InputValue value)
     {
-        if (value.isPressed && isGrounded)
+        if (value.isPressed && _jumpCount < maxJumpCount)
         {
             isJumping = true;
             jumpTimer = 0f;
+            ++_jumpCount;
         }
         else if (!value.isPressed)
             isJumping = false;
