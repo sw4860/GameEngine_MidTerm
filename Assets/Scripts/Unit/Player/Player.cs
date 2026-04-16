@@ -105,7 +105,7 @@ public class Player : Health
 
     void OnJump(InputValue value)
     {
-        if (value.isPressed && _jumpCount < maxJumpCount)
+        if (value.isPressed && isGrounded && _jumpCount < maxJumpCount)
         {
             isJumping = true;
             jumpTimer = 0f;
@@ -119,7 +119,7 @@ public class Player : Health
     {
         jumpTimer += Time.deltaTime;
         if (jumpTimer < jumpPressTime)
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Lerp(1.0f, jumpPower, jumpPressTime));
         else
             isJumping = false;
     }
@@ -226,14 +226,19 @@ public class Player : Health
         currentState = newState;
     }
 
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(float damage)
     {
-        base.TakeDamage(damage);
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            base.Die();
+            EventManager.OnPlayerDeath?.Invoke();
+        }
         EventManager.OnPlayerHPChanged?.Invoke();
     }
-
-    public List<int> GetHealth()
+    
+    public List<float> GetHealth()
     {
-        return new List<int> {currentHealth, maxHP};
+        return new List<float> {currentHealth, maxHP};
     }
 }

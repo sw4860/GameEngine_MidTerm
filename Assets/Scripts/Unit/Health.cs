@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] protected int maxHP = 100;
-    protected int currentHealth;
+    [SerializeField] protected float maxHP = 10;
+    protected float currentHealth;
 
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(float damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyAi : MonoBehaviour
+public class EnemyAi : Health
 {
     [SerializeField] private EnemyAiLogic enemyAiLogic;
     [HideInInspector] public Transform player;
