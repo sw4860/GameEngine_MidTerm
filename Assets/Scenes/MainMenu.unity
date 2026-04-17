@@ -462,7 +462,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 521105594}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 290909997}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &521105594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,7 +595,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 690162859}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 290909997}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &690162859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -978,7 +1002,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1115523045}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 290909997}
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: ToggleHelpMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1115523045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1320,7 +1356,7 @@ MonoBehaviour:
   m_text: "\uD504\uB85C\uC81D\uD2B8: \uD2B8\uB808\uC838"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 754523270d1c6914c93518eb87ae72aa, type: 2}
-  m_sharedMaterial: {fileID: -2206892152933827527, guid: 754523270d1c6914c93518eb87ae72aa, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 8dfccdad9bfb4554c83ad9357c8be6ea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
