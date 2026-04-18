@@ -85,18 +85,27 @@ public class UiManager : MonoBehaviour
     public void RestartButton()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneTransitionManager.Instance.TransitionScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitButton()
+    {
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
     }
 
     public void MainMenuButton()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        SceneTransitionManager.Instance.TransitionScene("MainMenu");
     }
 
     public void StartSceneButton(string sceneName)
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(sceneName);
+        SceneTransitionManager.Instance.TransitionScene(sceneName);
     }
 }

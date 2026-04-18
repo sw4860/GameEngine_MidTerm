@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class Player : Health
 {
     [Header("Movement Settings")]
-    [SerializeField] private float moveSpeed = 5f;
+    public float moveSpeed {get; set;}
     [SerializeField] private int maxJumpCount = 2;
     [SerializeField] private float jumpPower = 5f;
     [SerializeField] private float jumpPressTime = 0.1f;
