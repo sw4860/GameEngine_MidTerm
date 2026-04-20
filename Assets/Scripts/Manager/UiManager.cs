@@ -67,7 +67,7 @@ public class UiManager : MonoBehaviour
 
         while (timer < hpDecreaseDuration)
         {
-            timer += Time.deltaTime;
+            timer += Time.unscaledDeltaTime;
             float newFillAmount = Mathf.Lerp(startFillAmount, targetFillAmount, timer / hpDecreaseDuration);
             HpSubImage.fillAmount = newFillAmount;
             yield return null;
@@ -90,11 +90,7 @@ public class UiManager : MonoBehaviour
 
     public void QuitButton()
     {
-        #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-        #else
-                Application.Quit();
-        #endif
+        Application.Quit();
     }
 
     public void MainMenuButton()

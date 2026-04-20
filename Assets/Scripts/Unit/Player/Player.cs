@@ -1,16 +1,19 @@
+using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : Health
 {
     [Header("Movement Settings")]
-    public float moveSpeed {get; set;}
+    [SerializeField] public float moveSpeed = 5f;
     [SerializeField] private int maxJumpCount = 2;
-    [SerializeField] private float jumpPower = 5f;
+    [SerializeField] public float jumpPower = 5f;
     [SerializeField] private float jumpPressTime = 0.1f;
+    [SerializeField] private float fallMultiplier = 2.5f;
     [SerializeField] private float dashPower = 5f;
-    [SerializeField] private float dashCooldown = 3f;
+    [SerializeField] public float dashCooldown = 3f;
     [SerializeField] private float dashTime = 0.2f;
     
     [Header("Ground Check Settings")]
@@ -23,6 +26,7 @@ public class Player : Health
     [SerializeField] private float ghostSpawnRate = 0.03f;
     [SerializeField] private float ghostFadeTime = 0.3f;
 
+    public bool isInvincible { get; set; }
     private Vector2 moveInput;
 
     private bool isGrounded;
@@ -31,7 +35,7 @@ public class Player : Health
     private float jumpTimer;
     private bool isDashing;
     private float dashTimer;
-    private float lastDashTime;
+    public float lastDashTime { get; set; }
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -57,7 +61,7 @@ public class Player : Health
         animator = GetComponent<Animator>();
 
         currentHealth = maxHP;
-        EventManager.OnPlayerHPChanged();
+        EventManager.OnPlayerHPChanged?.Invoke();
 
         ghostSprites = new SpriteRenderer[ghostPoolSize];
         ghostAlpha = new float[ghostPoolSize];
@@ -67,13 +71,18 @@ public class Player : Health
             ghostSprites[i] = ghostObj.AddComponent<SpriteRenderer>();
             ghostSprites[i].gameObject.SetActive(false);
         }
+
+        if (rb.linearVelocity.y < 0)
+        {
+            rb.linearVelocity += Vector2.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+        }
     }
 
     void Update()
     {
 
         if (!isDashing)
-            rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(Mathf.Round(moveInput.x) * moveSpeed, rb.linearVelocity.y);
         else
             HandleDash();
 
@@ -119,7 +128,7 @@ public class Player : Health
     {
         jumpTimer += Time.deltaTime;
         if (jumpTimer < jumpPressTime)
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Lerp(1.0f, jumpPower, jumpPressTime));
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Lerp(jumpPower / 2, jumpPower, jumpTimer / jumpPressTime));
         else
             isJumping = false;
     }
@@ -129,16 +138,17 @@ public class Player : Health
         if (value.isPressed && !isDashing && Time.time >= lastDashTime + dashCooldown)
         {
             isDashing = true;
+            isJumping = false;
             lastDashTime = Time.time;
             ghostSpawnTimer = 0f;
         }
     }
-    
+
     void HandleDash()
     {
         dashTimer += Time.deltaTime;
 
-        float dashDirection = spriteRenderer.flipX ? -1 : 1;
+        float dashDirection = math.round(moveInput.x);
         rb.linearVelocity = new Vector2(dashDirection * dashPower, 0);
 
         ghostSpawnTimer -= Time.deltaTime;
@@ -228,6 +238,9 @@ public class Player : Health
 
     public override void TakeDamage(float damage)
     {
+        if (isInvincible) return;
+
+        CreateDamageText(damage);
         currentHealth -= damage;
         if (currentHealth <= 0)
         {

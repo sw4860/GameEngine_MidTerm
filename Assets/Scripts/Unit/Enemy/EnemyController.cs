@@ -1,10 +1,19 @@
 using UnityEngine;
 
+public enum EnemyType
+{
+    Ground,
+    Fly
+}
+
 public class EnemyController : Health
 {
+    [SerializeField] private EnemyType EnemyType = EnemyType.Ground;
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float damage = 3f;
     [SerializeField] private float attackDelay = 0.25f;
+    [SerializeField] private float PatrolRangeX = 3f;
+    [SerializeField] private float PatrolRangeY = 3f;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -15,6 +24,9 @@ public class EnemyController : Health
     private bool isMovingRight = true;
     private bool isAttacking = false;
     private float attackTimer = 0f;
+    private float startPosX;
+    private float startPosY;
+    private Vector2 targetPosition;
 
     private void Start()
     {
@@ -24,14 +36,35 @@ public class EnemyController : Health
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         currentHealth = maxHP;
+        startPosX = transform.position.x;
+        startPosY = transform.position.y;
+        SetRandomPosition();
     }
 
     private void Update()
     {
-        if (isMovingRight)
-            rb.linearVelocity = new Vector2(moveSpeed, rb.linearVelocity.y);
-        else
-            rb.linearVelocity = new Vector2(-moveSpeed, rb.linearVelocity.y);
+        if (EnemyType == EnemyType.Ground)
+        {
+            if (transform.position.x > startPosX + PatrolRangeX)
+                isMovingRight = false;
+            else if (transform.position.x < startPosX - PatrolRangeX)
+                isMovingRight = true;
+
+            if (isMovingRight)
+                rb.linearVelocity = new Vector2(moveSpeed, rb.linearVelocity.y);
+            else
+                rb.linearVelocity = new Vector2(-moveSpeed, rb.linearVelocity.y);
+        }
+        else if (EnemyType == EnemyType.Fly)
+        {
+            if (Vector2.Distance(transform.position, targetPosition) < 0.2f)
+            {
+                SetRandomPosition();
+            }
+
+            Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+            rb.linearVelocity = direction * moveSpeed;
+        }
 
         if (isAttacking)
         {
@@ -48,11 +81,12 @@ public class EnemyController : Health
 
     public override void TakeDamage(float damage)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
+        base.TakeDamage(damage);
+    }
+
+    private void SetRandomPosition()
+    {
+        targetPosition = new Vector2(startPosX, startPosY) + new Vector2(Random.Range(-PatrolRangeX, PatrolRangeX), Random.Range(-PatrolRangeY, PatrolRangeY));
     }
 
     void UpdateSprite()
@@ -65,12 +99,21 @@ public class EnemyController : Health
     {
         if (collision.CompareTag("Wall"))
         {
-            isMovingRight = !isMovingRight;
+            if (EnemyType == EnemyType.Ground)
+            {
+                isMovingRight = !isMovingRight;
+            }
+            else if (EnemyType == EnemyType.Fly)
+            {
+                SetRandomPosition();
+            }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Wall") && EnemyType == EnemyType.Fly)
+            SetRandomPosition();
         if (!collision.gameObject.CompareTag("Player")) return;
 
         attackTimer = 0f;

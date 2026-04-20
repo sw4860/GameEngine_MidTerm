@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1506fb0692d7d6e41ab738beda91759c, type: 3}
   m_Name: SpeedUpAbility
   m_EditorClassIdentifier: Assembly-CSharp::SpeedUpAbility
-  ItemSprite: {fileID: 0}
-  Effect: 5
+  ItemSprite: {fileID: 21300000, guid: 6d85182fdbe04d84eb68f731247f9668, type: 3}
+  Effect: 10
+  Duration: 5

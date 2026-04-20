@@ -140,9 +140,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   maxHP: 10
+  EnemyType: 0
   moveSpeed: 3
-  damage: 3
+  damage: 0
   attackDelay: 0.5
+  PatrolRangeX: 20
+  PatrolRangeY: 0
 --- !u!95 &3371460602870453345
 Animator:
   serializedVersion: 7
@@ -153,7 +156,7 @@ Animator:
   m_GameObject: {fileID: 7731526474601366446}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 741a8564a170a2140b3d2d416701a8af, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2b656825904332a4a9aea45e002fa3e5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

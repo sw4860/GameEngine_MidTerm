@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,10 +109,10 @@ TextureImporter:
       name: Desert Background Desert Layer 4_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 160
-        width: 130
-        height: 38
+        x: 0
+        y: 0
+        width: 512
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,55 +127,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Desert Background Desert Layer 4_1
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 136
-        width: 130
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ac829e1f2c7578e0800000000000000
-      internalID: -1696313142816895838
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Desert Background Desert Layer 4_2
-      rect:
-        serializedVersion: 2
-        x: 386
-        y: 131
-        width: 126
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2d99fa24915a4ca30800000000000000
-      internalID: 4234691077546678738
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1a6c8ebe4f378c54fa7a9c7885c7e41f
     internalID: 0
     vertices: []
     indices: 
