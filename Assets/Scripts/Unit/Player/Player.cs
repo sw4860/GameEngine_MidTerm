@@ -11,6 +11,7 @@ public class Player : Health
     [SerializeField] private int maxJumpCount = 2;
     [SerializeField] public float jumpPower = 5f;
     [SerializeField] private float jumpPressTime = 0.1f;
+    [SerializeField] private float coyoteTime = 0.1f;
     [SerializeField] private float fallMultiplier = 2.5f;
     [SerializeField] private float dashPower = 5f;
     [SerializeField] public float dashCooldown = 3f;
@@ -30,9 +31,11 @@ public class Player : Health
     private Vector2 moveInput;
 
     private bool isGrounded;
+    private bool isRealGrounded;
     private int _jumpCount;
     private bool isJumping;
     private float jumpTimer;
+    private float coyoteTimer;
     private bool isDashing;
     private float dashTimer;
     public float lastDashTime { get; set; }
@@ -89,9 +92,28 @@ public class Player : Health
         if (isJumping)
             HandleJump();
 
+        if (!isGrounded)
+        {
+            coyoteTimer += Time.deltaTime;
+            if (coyoteTimer >= coyoteTime)
+            {
+                isRealGrounded = false;
+            }
+        }
+        else
+        {
+            coyoteTimer = 0f;
+            isRealGrounded = true;
+        }
+
         UpdateSprite();
         UpdateGhosts();
         OnGrounded();
+    }
+
+    void OnEsc(InputValue value)
+    {
+        EventManager.OnEscPressed?.Invoke();
     }
 
     void OnMove(InputValue value)
@@ -114,7 +136,7 @@ public class Player : Health
 
     void OnJump(InputValue value)
     {
-        if (value.isPressed && isGrounded && _jumpCount < maxJumpCount)
+        if (value.isPressed && isRealGrounded && _jumpCount < maxJumpCount)
         {
             isJumping = true;
             jumpTimer = 0f;

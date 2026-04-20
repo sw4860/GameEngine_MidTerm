@@ -11,6 +11,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private Image HpSubImage;
 
     [SerializeField] private GameObject GameOverPanel;
+    [SerializeField] private GameObject GamePausePanel;
 
     private Player player;
     private float hpRatio;
@@ -28,6 +29,23 @@ public class UiManager : MonoBehaviour
         }
         EventManager.OnPlayerHPChanged += OnPlayerHPChanged;
         EventManager.OnPlayerDeath += OnPlayerDeath;
+        EventManager.OnEscPressed += OnEscPressed;
+    }
+
+    void OnEscPressed()
+    {
+        if (GamePausePanel.activeSelf) return;
+
+        if (Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
+            GamePausePanel.SetActive(false);
+        }
+        else
+        {
+            Time.timeScale = 0f;
+            GamePausePanel.SetActive(true);
+        }
     }
 
     void OnDestroy()
