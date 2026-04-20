@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: f78d2f09448b3e64893ace7a6d802b1a
+guid: e548da5d9d382f7488e67a0a00c5282a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2443472630945366811
-    second: UiCozyFree (1)_0
+      213: -6290222957907565619
+    second: ExtraDash_0
   - first:
-      213: -737247498282750074
-    second: UiCozyFree (1)_1
+      213: 7897175588371490970
+    second: ExtraDash_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,45 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UiCozyFree (1)_0
+      name: ExtraDash_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 2
-        width: 57
-        height: 81
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 18, y: 8, z: 18, w: 15}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b1343e96965f8e120800000000000000
-      internalID: 2443472630945366811
+      spriteID: dc3a9ebfb83a4b8a0800000000000000
+      internalID: -6290222957907565619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UiCozyFree (1)_1
+      name: ExtraDash_1
       rect:
         serializedVersion: 2
-        x: 65
-        y: 3
-        width: 47
-        height: 80
+        x: 10
+        y: 10
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 8, z: 8, w: 8}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68faf417e45c4c5f0800000000000000
-      internalID: -737247498282750074
+      spriteID: a98e4c94b57689d60800000000000000
+      internalID: 7897175588371490970
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0905b375731f5404fac2e9f511adad29
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -158,47 +158,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      UiCozyFree (1)_0: 2443472630945366811
-      UiCozyFree (1)_1: -737247498282750074
-      UiCozyFree (1)_10: 505635261
-      UiCozyFree (1)_11: -134533935
-      UiCozyFree (1)_12: -1684281661
-      UiCozyFree (1)_13: -146437237
-      UiCozyFree (1)_14: -1254361217
-      UiCozyFree (1)_15: -2120681327
-      UiCozyFree (1)_16: 357528600
-      UiCozyFree (1)_17: 246140429
-      UiCozyFree (1)_18: 1465551687
-      UiCozyFree (1)_19: -835332539
-      UiCozyFree (1)_2: 373165402
-      UiCozyFree (1)_20: 114045111
-      UiCozyFree (1)_21: 1759941067
-      UiCozyFree (1)_22: -309057384
-      UiCozyFree (1)_23: 1003675697
-      UiCozyFree (1)_24: 1602386859
-      UiCozyFree (1)_25: -3832459
-      UiCozyFree (1)_26: -148664690
-      UiCozyFree (1)_27: 1104265140
-      UiCozyFree (1)_28: 959485074
-      UiCozyFree (1)_29: 1790338294
-      UiCozyFree (1)_3: 1637688672
-      UiCozyFree (1)_30: -2072000457
-      UiCozyFree (1)_31: -1074894960
-      UiCozyFree (1)_32: 1307458993
-      UiCozyFree (1)_33: -427653177
-      UiCozyFree (1)_34: -535960695
-      UiCozyFree (1)_35: -986126592
-      UiCozyFree (1)_36: -1462655215
-      UiCozyFree (1)_4: -1226475346
-      UiCozyFree (1)_5: 1597638786
-      UiCozyFree (1)_6: 1739718157
-      UiCozyFree (1)_7: -214221219
-      UiCozyFree (1)_8: 992015113
-      UiCozyFree (1)_9: -346141161
+      ExtraDash_0: -6290222957907565619
+      ExtraDash_1: 7897175588371490970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

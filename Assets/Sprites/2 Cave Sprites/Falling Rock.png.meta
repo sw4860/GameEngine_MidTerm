@@ -151,12 +151,12 @@ TextureImporter:
       name: Falling Rock_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 3
-        width: 11
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 11
+        y: 4
+        width: 9
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -173,12 +173,12 @@ TextureImporter:
       name: Falling Rock_1
       rect:
         serializedVersion: 2
-        x: 41
-        y: 3
-        width: 11
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 42
+        y: 4
+        width: 9
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: Falling Rock_2
       rect:
         serializedVersion: 2
-        x: 75
-        y: 3
-        width: 11
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 76
+        y: 4
+        width: 9
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -217,12 +217,12 @@ TextureImporter:
       name: Falling Rock_3
       rect:
         serializedVersion: 2
-        x: 106
-        y: 3
-        width: 11
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 107
+        y: 4
+        width: 9
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: Falling Rock_4
       rect:
         serializedVersion: 2
-        x: 138
-        y: 3
-        width: 11
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 139
+        y: 4
+        width: 9
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -261,12 +261,12 @@ TextureImporter:
       name: Falling Rock_5
       rect:
         serializedVersion: 2
-        x: 170
-        y: 3
-        width: 11
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 171
+        y: 4
+        width: 9
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -283,12 +283,12 @@ TextureImporter:
       name: Falling Rock_6
       rect:
         serializedVersion: 2
-        x: 202
-        y: 3
-        width: 11
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 203
+        y: 4
+        width: 9
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -305,12 +305,12 @@ TextureImporter:
       name: Falling Rock_7
       rect:
         serializedVersion: 2
-        x: 234
-        y: 3
-        width: 10
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 235
+        y: 4
+        width: 8
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -327,12 +327,12 @@ TextureImporter:
       name: Falling Rock_8
       rect:
         serializedVersion: 2
-        x: 266
-        y: 3
-        width: 10
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 267
+        y: 4
+        width: 8
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -349,12 +349,12 @@ TextureImporter:
       name: Falling Rock_9
       rect:
         serializedVersion: 2
-        x: 298
-        y: 3
-        width: 10
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 299
+        y: 4
+        width: 8
+        height: 49
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -371,12 +371,12 @@ TextureImporter:
       name: Falling Rock_10
       rect:
         serializedVersion: 2
-        x: 330
-        y: 3
-        width: 10
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 331
+        y: 4
+        width: 8
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -393,12 +393,12 @@ TextureImporter:
       name: Falling Rock_11
       rect:
         serializedVersion: 2
-        x: 361
-        y: 3
-        width: 15
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 362
+        y: 4
+        width: 13
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -415,12 +415,12 @@ TextureImporter:
       name: Falling Rock_12
       rect:
         serializedVersion: 2
-        x: 391
-        y: 7
-        width: 17
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 392
+        y: 8
+        width: 15
+        height: 9
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -437,12 +437,12 @@ TextureImporter:
       name: Falling Rock_13
       rect:
         serializedVersion: 2
-        x: 419
-        y: 5
-        width: 12
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 420
+        y: 6
+        width: 10
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -459,12 +459,12 @@ TextureImporter:
       name: Falling Rock_14
       rect:
         serializedVersion: 2
-        x: 435
-        y: 6
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 436
+        y: 7
+        width: 7
+        height: 6
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -481,12 +481,12 @@ TextureImporter:
       name: Falling Rock_15
       rect:
         serializedVersion: 2
-        x: 448
-        y: 4
-        width: 13
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 449
+        y: 5
+        width: 11
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -503,12 +503,12 @@ TextureImporter:
       name: Falling Rock_16
       rect:
         serializedVersion: 2
-        x: 469
-        y: 4
-        width: 9
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 470
+        y: 5
+        width: 7
+        height: 5
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -525,7 +525,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c5cd748e857f67a4eaea1f6744b65a88
     internalID: 0
     vertices: []
     indices: 
@@ -533,7 +533,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Falling Rock_0: -3041518545462984696
       Falling Rock_1: -2997235018418354563

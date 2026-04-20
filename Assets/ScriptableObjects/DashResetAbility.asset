@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3927d09075b515f4ab70052d97b47d1c, type: 3}
   m_Name: DashResetAbility
   m_EditorClassIdentifier: Assembly-CSharp::DashResetAbility
-  ItemSprite: {fileID: 0}
+  ItemSprite: {fileID: 21300000, guid: e548da5d9d382f7488e67a0a00c5282a, type: 3}

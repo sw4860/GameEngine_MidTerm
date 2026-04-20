@@ -28,7 +28,8 @@ public class SceneTransitionManager : MonoBehaviour
     public void TransitionScene(string sceneName)
     {
         if (isTransition) return;
-        GameObject.FindGameObjectWithTag("Canvas").SetActive(false);
+        GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
+        if (Canvas != null) Canvas.SetActive(false);
         StartCoroutine(SceneTransitionCoroutine(sceneName));
     }
 
