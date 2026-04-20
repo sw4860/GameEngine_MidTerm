@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TriggerTrap : MonoBehaviour
+public class FallingTrap : MonoBehaviour
 {
     [SerializeField] private int damage = 1;
     

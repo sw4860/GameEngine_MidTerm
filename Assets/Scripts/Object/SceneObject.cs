@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class SceneObject : MonoBehaviour
 {
-    [SerializeField] private string currentSceneName;
-    [SerializeField] private string nextSceneName;
+    public string currentSceneName;
+    public string nextSceneName;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,5 +15,11 @@ public class SceneObject : MonoBehaviour
             }
             SceneTransitionManager.Instance.TransitionScene(nextSceneName);
         }
+    }
+
+    public void SetSceneNames(string current, string next)
+    {
+        currentSceneName = current;
+        nextSceneName = next;
     }
 }
