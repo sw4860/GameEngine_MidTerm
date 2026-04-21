@@ -5,6 +5,7 @@ public class MainMenuManager : MonoBehaviour
     public GameObject helpMenuPanel;
     public GameObject stageSelectPanel;
     private bool isHelpMenuActive = false;
+    private bool isStageSelectActive = false;
 
     public void StartGame()
     {
@@ -15,6 +16,7 @@ public class MainMenuManager : MonoBehaviour
         else
         {
             stageSelectPanel.SetActive(true);
+            isStageSelectActive = true;
         }
     }
 
@@ -22,6 +24,12 @@ public class MainMenuManager : MonoBehaviour
     {
         isHelpMenuActive = !isHelpMenuActive;
         helpMenuPanel.SetActive(isHelpMenuActive);
+    }
+
+    public void ToggleStageSelect()
+    {
+        isStageSelectActive = !isStageSelectActive;
+        stageSelectPanel.SetActive(isStageSelectActive);
     }
 
     public void QuitGame()
