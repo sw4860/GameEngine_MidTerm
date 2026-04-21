@@ -8,6 +8,7 @@ TagManager:
   - Canvas
   - Wall
   - Ground
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Item
   - Trap
   - Enemy
-  - 
+  - Projectile
   - 
   - 
   - 

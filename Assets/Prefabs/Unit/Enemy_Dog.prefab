@@ -108,10 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68aec600519f8da469423c894c26d94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  maxHP: 10
+  maxHP: 3
   EnemyType: 0
   moveSpeed: 5
-  damage: 2
+  damage: 2.5
   attackDelay: 0.5
   PatrolRangeX: 20
   PatrolRangeY: 0
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1

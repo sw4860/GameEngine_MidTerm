@@ -5,7 +5,12 @@ public class ItemObject : MonoBehaviour
     [SerializeField] private ItemAbility itemAbility;
     private SpriteRenderer spriteRenderer;
 
-    void Awake()
+    public void Init(ItemAbility ability)
+    {
+        itemAbility = ability;
+    }
+
+    void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = itemAbility.ItemSprite;

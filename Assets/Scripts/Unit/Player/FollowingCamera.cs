@@ -3,6 +3,7 @@ using UnityEngine;
 public class FollowingCamera : MonoBehaviour
 {
     private Transform player;
+    private Vector3 offset;
 
     void Start()
     {
@@ -12,6 +13,6 @@ public class FollowingCamera : MonoBehaviour
     void LateUpdate()
     {
         if (player == null) return;
-        transform.position = new Vector3(player.position.x, player.position.y, -10f);
+        transform.position = new Vector3(player.position.x, player.position.y, -10f) + offset;
     }
 }

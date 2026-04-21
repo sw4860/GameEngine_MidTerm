@@ -25,7 +25,7 @@ public class UiManager : MonoBehaviour
             hpRatio = player.GetHealth()[0] / player.GetHealth()[1];
             HpMainImage.fillAmount = hpRatio;
             HpSubImage.fillAmount = hpRatio;
-            HpText.text = $"{player.GetHealth()[0]}/{player.GetHealth()[1]}";
+            HpText.text = $"{player.GetHealth()[0]} / {player.GetHealth()[1]}";
         }
         EventManager.OnPlayerHPChanged += OnPlayerHPChanged;
         EventManager.OnPlayerDeath += OnPlayerDeath;
@@ -61,7 +61,7 @@ public class UiManager : MonoBehaviour
         float maxHealth = player.GetHealth()[1];
         float currentHealthRatio = currentHealth / maxHealth;
 
-        HpText.text = $"{currentHealth}/{maxHealth}";
+        HpText.text = $"{currentHealth} / {maxHealth}";
         HpMainImage.fillAmount = currentHealthRatio;
 
         if (currentHealthRatio < hpRatio)
