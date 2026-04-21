@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class Player : Health
 {
+    [SerializeField] private WeaponLogic weapon;
+
     [Header("Movement Settings")]
     [SerializeField] public float moveSpeed = 5f;
     [SerializeField] private int maxJumpCount = 2;
@@ -39,6 +41,7 @@ public class Player : Health
     private bool isDashing;
     private float dashTimer;
     public float lastDashTime { get; set; }
+    private float lastAttackTime;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -59,6 +62,8 @@ public class Player : Health
     void Awake()
     {
         lastDashTime = -dashCooldown;
+        lastAttackTime = 0;
+
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -73,11 +78,6 @@ public class Player : Health
             GameObject ghostObj = new GameObject("DashGhost_" + i);
             ghostSprites[i] = ghostObj.AddComponent<SpriteRenderer>();
             ghostSprites[i].gameObject.SetActive(false);
-        }
-
-        if (rb.linearVelocity.y < 0)
-        {
-            rb.linearVelocity += Vector2.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
     }
 
@@ -97,6 +97,19 @@ public class Player : Health
             isRealGrounded = true;
         }
 
+        if (weapon != null && Mouse.current.leftButton.isPressed && Time.time >= lastAttackTime + weapon.attackCooldown && StaticValues.CanAttack)
+        {
+            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            weapon.Attack(transform, mouseWorldPos);
+            lastAttackTime = Time.time;
+        }
+
+        if (Keyboard.current.leftCtrlKey.wasPressedThisFrame && StaticValues.CanGravityChange)
+        {
+            rb.gravityScale *= -1;
+            transform.Rotate(180f, 0f, 0f);
+        }
+
         UpdateSprite();
         UpdateGhosts();
         OnGrounded();
@@ -109,8 +122,13 @@ public class Player : Health
         else
             HandleDash();
 
-        if (isJumping)
+        if (isJumping) 
             HandleJump();
+
+        if (rb.linearVelocity.y * Mathf.Sign(rb.gravityScale) < 0)
+        {
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * rb.gravityScale * (fallMultiplier - 1) * Time.fixedDeltaTime;
+        }
     }
 
     void OnEsc(InputValue value)
@@ -152,7 +170,7 @@ public class Player : Health
     {
         jumpTimer += Time.deltaTime;
         if (jumpTimer < jumpPressTime)
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Lerp(jumpPower / 2, jumpPower, jumpTimer / jumpPressTime));
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Lerp(jumpPower / 2, jumpPower, jumpTimer / jumpPressTime) * transform.up.y);
         else
             isJumping = false;
     }
@@ -214,6 +232,7 @@ public class Player : Health
         
         ghost.sprite = spriteRenderer.sprite;
         ghost.transform.position = transform.position;
+        ghost.transform.rotation = transform.rotation;
         ghost.flipX = spriteRenderer.flipX;
         ghost.color = new Color(1f, 1f, 1f, 1f);
         
@@ -228,7 +247,10 @@ public class Player : Health
         if (moveInput.x > 0) spriteRenderer.flipX = false;
         else if (moveInput.x < 0) spriteRenderer.flipX = true;
 
-        if (isGrounded)
+        float verticalVelocity = rb.linearVelocity.y * Mathf.Sign(rb.gravityScale);
+
+        bool actuallyGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if (actuallyGrounded)
         {
             if (moveInput.x != 0)
             {
@@ -241,7 +263,7 @@ public class Player : Health
         }
         else
         {
-            if (rb.linearVelocity.y > 0)
+            if (verticalVelocity > 0)
             {
                 ChangeAnimation(PLAYER_JUMP);
             }

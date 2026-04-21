@@ -15,6 +15,12 @@ public class ShotTrap : MonoBehaviour
     private float timer = 0f;
     private float nextInterval = 0f;
 
+    void Start()
+    {
+        nextInterval = Random.Range(minInterval, maxInterval);
+    }
+
+
     void Update()
     {
         timer += Time.deltaTime;

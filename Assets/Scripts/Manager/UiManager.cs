@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.Mathematics;
 
 public class UiManager : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class UiManager : MonoBehaviour
     {
         if (player == null) return;
 
-        float currentHealth = player.GetHealth()[0];
+        float currentHealth = math.max(0, player.GetHealth()[0]);
         float maxHealth = player.GetHealth()[1];
         float currentHealthRatio = currentHealth / maxHealth;
 

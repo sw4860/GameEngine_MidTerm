@@ -7,6 +7,7 @@ public class ItemDrop : MonoBehaviour
 
     void OnDestroy()
     {
+        if (!gameObject.scene.isLoaded) return;
         GameObject GO = Instantiate(itemPrefab, transform.position, Quaternion.identity);
         GO.GetComponent<ItemObject>().Init(itemAbility);
     }

@@ -8,4 +8,7 @@ public class StaticValues
     };
 
     public static List<string> ClearedStageSceneNames = new();
+
+    public static bool CanAttack = false;
+    public static bool CanGravityChange = true;
 }

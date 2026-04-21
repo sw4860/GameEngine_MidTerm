@@ -110,12 +110,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   maxHP: 10
+  weapon: {fileID: 11400000, guid: b6981b8becc9e35498a6729dd5857448, type: 2}
   moveSpeed: 5
   maxJumpCount: 1
   jumpPower: 5
   jumpPressTime: 0.55
   coyoteTime: 0.1
-  fallMultiplier: 2.5
+  fallMultiplier: 1.5
   dashPower: 20
   dashCooldown: 3
   dashTime: 0.2

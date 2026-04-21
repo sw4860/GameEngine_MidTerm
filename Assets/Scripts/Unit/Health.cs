@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        CreateDamageText(damage);
 
         if (currentHealth <= 0)
         {

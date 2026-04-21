@@ -14,6 +14,7 @@ public class EnemyController : Health
     [SerializeField] private float attackDelay = 0.25f;
     [SerializeField] private float PatrolRangeX = 3f;
     [SerializeField] private float PatrolRangeY = 3f;
+    [SerializeField] private bool isReversed = false;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -39,6 +40,12 @@ public class EnemyController : Health
         startPosX = transform.position.x;
         startPosY = transform.position.y;
         SetRandomPosition();
+
+        if (isReversed && EnemyType == EnemyType.Ground)
+        {
+            rb.gravityScale *= -1;
+            transform.Rotate(180f, 0f, 0f);
+        }
     }
 
     private void Update()
@@ -91,8 +98,16 @@ public class EnemyController : Health
 
     void UpdateSprite()
     {
-        if (rb.linearVelocity.x > 0) spriteRenderer.flipX = false;
-        else if (rb.linearVelocity.x < 0) spriteRenderer.flipX = true;
+        if (!isReversed)
+        {
+            if (rb.linearVelocity.x > 0) spriteRenderer.flipX = false;
+            else if (rb.linearVelocity.x < 0) spriteRenderer.flipX = true;
+        }
+        else
+        {
+            if (rb.linearVelocity.x < 0) spriteRenderer.flipX = true;
+            else if (rb.linearVelocity.x > 0) spriteRenderer.flipX = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

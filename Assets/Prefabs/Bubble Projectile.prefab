@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1739832104530996021}
   - component: {fileID: 2034766629800721198}
   - component: {fileID: 3896577142216745007}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bubble Projectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -173,3 +173,4 @@ MonoBehaviour:
   Speed: 0
   Direction: {x: 0, y: 0}
   Duration: 3
+  IsEnemy: 0

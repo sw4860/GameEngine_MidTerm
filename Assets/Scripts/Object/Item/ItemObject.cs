@@ -4,6 +4,7 @@ public class ItemObject : MonoBehaviour
 {
     [SerializeField] private ItemAbility itemAbility;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     public void Init(ItemAbility ability)
     {
@@ -12,6 +13,8 @@ public class ItemObject : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+        animator.enabled = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = itemAbility.ItemSprite;
     }
@@ -23,7 +26,13 @@ public class ItemObject : MonoBehaviour
         if (collision.TryGetComponent(out Player player))
         {
             itemAbility.ApplyAbility(player);
-            Destroy(gameObject);
+            animator.enabled = true;
+            animator.SetTrigger("Triggerd");
         }
+    }
+
+    public void DestroyObject()
+    {
+        Destroy(gameObject);
     }
 }

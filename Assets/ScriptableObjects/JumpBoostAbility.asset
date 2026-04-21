@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: JumpBoostAbility
   m_EditorClassIdentifier: Assembly-CSharp::JumpBoostAbility
   ItemSprite: {fileID: 21300000, guid: b31ec3cbac2e5dd41aa10c1b37fd0fc0, type: 3}
-  Effect: 1
+  Effect: 1.5
   Duration: 5

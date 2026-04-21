@@ -252,8 +252,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4554995973045884084, guid: fc1c1fffee845554bb33338f80e18c77, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 70773382}
   m_SourcePrefab: {fileID: 100100000, guid: fc1c1fffee845554bb33338f80e18c77, type: 3}
+--- !u!1 &70773381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4554995973045884084, guid: fc1c1fffee845554bb33338f80e18c77, type: 3}
+  m_PrefabInstance: {fileID: 70773380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &70773382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70773381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000359965ef36af42bbae4157355ee52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDrop
+  itemAbility: {fileID: 11400000, guid: 522b53bad45c58d4d84fa055ab9be5bb, type: 2}
+  itemPrefab: {fileID: 5012979071738301039, guid: c7aa848d93803574d9f39e3bab80bf7a, type: 3}
 --- !u!4 &94780565 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7269749301737250202, guid: 4c5c9860aac816241a29798757bde97d, type: 3}
@@ -1833,7 +1855,7 @@ GameObject:
   - component: {fileID: 1033212797}
   m_Layer: 3
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9612,7 +9634,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 42
-      m_TileSpriteIndex: 44
+      m_TileSpriteIndex: 54
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9622,7 +9644,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 42
-      m_TileSpriteIndex: 42
+      m_TileSpriteIndex: 54
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9632,7 +9654,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 42
-      m_TileSpriteIndex: 42
+      m_TileSpriteIndex: 44
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -10838,31 +10860,11 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
-  - first: {x: 46, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 42
-      m_TileSpriteIndex: 48
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: 47, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 42
-      m_TileSpriteIndex: 54
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
   - first: {x: 48, y: -2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 42
-      m_TileSpriteIndex: 44
+      m_TileSpriteIndex: 47
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -16694,7 +16696,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1469
+  - m_RefCount: 1467
     m_Data: {fileID: 11400000, guid: 20f18a3db16642f45813113f14797b84, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -16781,19 +16783,19 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: -325137612, guid: a358121990514aa418eee3b80ecef7c7, type: 3}
-  - m_RefCount: 1076
+  - m_RefCount: 1074
     m_Data: {fileID: -80582096, guid: a358121990514aa418eee3b80ecef7c7, type: 3}
   - m_RefCount: 18
     m_Data: {fileID: 331520086, guid: a358121990514aa418eee3b80ecef7c7, type: 3}
-  - m_RefCount: 31
+  - m_RefCount: 30
     m_Data: {fileID: 1319600441, guid: a358121990514aa418eee3b80ecef7c7, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 1792339070, guid: a358121990514aa418eee3b80ecef7c7, type: 3}
-  - m_RefCount: 14
+  - m_RefCount: 15
     m_Data: {fileID: -841270401, guid: a358121990514aa418eee3b80ecef7c7, type: 3}
-  - m_RefCount: 32
+  - m_RefCount: 31
     m_Data: {fileID: 5441223297315994465, guid: a358121990514aa418eee3b80ecef7c7, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1622746133, guid: a358121990514aa418eee3b80ecef7c7, type: 3}
@@ -16805,12 +16807,12 @@ Tilemap:
     m_Data: {fileID: 1149420774, guid: a358121990514aa418eee3b80ecef7c7, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: -1780351774, guid: a358121990514aa418eee3b80ecef7c7, type: 3}
-  - m_RefCount: 96
+  - m_RefCount: 97
     m_Data: {fileID: 289656007, guid: a358121990514aa418eee3b80ecef7c7, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1954200950, guid: a358121990514aa418eee3b80ecef7c7, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 1469
+  - m_RefCount: 1467
     m_Data:
       e00: 1
       e01: 0
@@ -16829,7 +16831,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 1469
+  - m_RefCount: 1467
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -17017,10 +17019,6 @@ CompositeCollider2D:
       - X: 480000000
         Y: 20000000
       - X: 480000000
-        Y: -10000000
-      - X: 460000000
-        Y: -10000000
-      - X: 460000000
         Y: -20000000
       - X: 380000000
         Y: -20000000
@@ -17191,9 +17189,7 @@ CompositeCollider2D:
       - {x: 51, y: 1.0000294}
       - {x: 50.999973, y: 2}
       - {x: 48, y: 1.9999708}
-      - {x: 47.999973, y: -1}
-      - {x: 46, y: -1.0000293}
-      - {x: 45.999973, y: -2}
+      - {x: 47.999973, y: -2}
       - {x: 38, y: -1.9999707}
       - {x: 37.999973, y: -1}
       - {x: 31, y: -0.9999706}
@@ -17441,6 +17437,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7269749301737250202, guid: 4c5c9860aac816241a29798757bde97d, type: 3}
   m_PrefabInstance: {fileID: 1211822622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1247609313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 929191723387042958, guid: b865403bfd919fc4aa731a93c75a0bcf, type: 3}
+  m_PrefabInstance: {fileID: 1902886894}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1285103957
 GameObject:
@@ -18173,6 +18174,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3768393442735655552, guid: b865403bfd919fc4aa731a93c75a0bcf, type: 3}
   m_PrefabInstance: {fileID: 1902886894}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1537013366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247609313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000359965ef36af42bbae4157355ee52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDrop
+  itemAbility: {fileID: 11400000, guid: bc8ba0f60baaf1243beb1f088a5ab607, type: 2}
+  itemPrefab: {fileID: 5012979071738301039, guid: c7aa848d93803574d9f39e3bab80bf7a, type: 3}
 --- !u!1001 &1558841541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18644,7 +18659,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 929191723387042958, guid: b865403bfd919fc4aa731a93c75a0bcf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2140197660}
   m_SourcePrefab: {fileID: 100100000, guid: b865403bfd919fc4aa731a93c75a0bcf, type: 3}
 --- !u!1001 &1883303477
 PrefabInstance:
@@ -18762,7 +18780,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 929191723387042958, guid: b865403bfd919fc4aa731a93c75a0bcf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1537013366}
   m_SourcePrefab: {fileID: 100100000, guid: b865403bfd919fc4aa731a93c75a0bcf, type: 3}
 --- !u!1001 &1949404724
 PrefabInstance:
@@ -19143,6 +19164,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e951b6df0f6b66349a0baa852d4beeaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!1 &2140197654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 929191723387042958, guid: b865403bfd919fc4aa731a93c75a0bcf, type: 3}
+  m_PrefabInstance: {fileID: 1883150350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2140197660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140197654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000359965ef36af42bbae4157355ee52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDrop
+  itemAbility: {fileID: 11400000, guid: 584e4a5f01ffc1748956e0944facf75e, type: 2}
+  itemPrefab: {fileID: 5012979071738301039, guid: c7aa848d93803574d9f39e3bab80bf7a, type: 3}
 --- !u!1001 &2400867309515312285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19195,6 +19235,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2777936593782056241, guid: a6d092af83b2988448313af5ef3b6cab, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: b6981b8becc9e35498a6729dd5857448, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
