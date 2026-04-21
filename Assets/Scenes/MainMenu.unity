@@ -450,8 +450,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A,D : \uC88C\uC6B0 \uC774\uB3D9\\nSpace : \uC810\uD504\\n\uC88C\uD074\uB9AD
-    : \uACF5\uACA9\\n\uC88C \uCEE8\uD2B8\uB864 : \uC911\uB825 \uBC18\uC804"
+  m_text: "A,D : \uC88C\uC6B0 \uC774\uB3D9\\nSpace : \uC810\uD504\\n\uC88C\uC26C\uD504\uD2B8:
+    \uB300\uC2DC\\n\uC88C\uD074\uB9AD : \uACF5\uACA9\\n\uC88C \uCEE8\uD2B8\uB864
+    : \uC911\uB825 \uBC18\uC804"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 754523270d1c6914c93518eb87ae72aa, type: 2}
   m_sharedMaterial: {fileID: -2206892152933827527, guid: 754523270d1c6914c93518eb87ae72aa, type: 2}
