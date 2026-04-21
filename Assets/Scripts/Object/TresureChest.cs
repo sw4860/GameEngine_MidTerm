@@ -42,6 +42,7 @@ public class TresureChest : MonoBehaviour
 
         GameObject GO = Instantiate(PortalPrefab, PortalSpawnPosition, Quaternion.identity);
         GO.GetComponent<SceneObject>().SetSceneNames(currentStage, nextSceneName);
+        GO.GetComponent<SpriteRenderer>().flipX = true;
         Destroy(gameObject);
     }
 }

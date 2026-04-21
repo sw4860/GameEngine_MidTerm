@@ -34,8 +34,6 @@ public class UiManager : MonoBehaviour
 
     void OnEscPressed()
     {
-        if (GamePausePanel.activeSelf) return;
-
         if (Time.timeScale == 0f)
         {
             Time.timeScale = 1f;
@@ -52,6 +50,7 @@ public class UiManager : MonoBehaviour
     {
         EventManager.OnPlayerHPChanged -= OnPlayerHPChanged;
         EventManager.OnPlayerDeath -= OnPlayerDeath;
+        EventManager.OnEscPressed -= OnEscPressed;
     }
 
     void OnPlayerHPChanged()

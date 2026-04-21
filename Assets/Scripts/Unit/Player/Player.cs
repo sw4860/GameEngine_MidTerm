@@ -83,15 +83,6 @@ public class Player : Health
 
     void Update()
     {
-
-        if (!isDashing)
-            rb.linearVelocity = new Vector2(Mathf.Round(moveInput.x) * moveSpeed, rb.linearVelocity.y);
-        else
-            HandleDash();
-
-        if (isJumping)
-            HandleJump();
-
         if (!isGrounded)
         {
             coyoteTimer += Time.deltaTime;
@@ -109,6 +100,17 @@ public class Player : Health
         UpdateSprite();
         UpdateGhosts();
         OnGrounded();
+    }
+
+    void FixedUpdate()
+    {
+        if (!isDashing)
+            rb.linearVelocity = new Vector2(Mathf.Round(moveInput.x) * moveSpeed, rb.linearVelocity.y);
+        else
+            HandleDash();
+
+        if (isJumping)
+            HandleJump();
     }
 
     void OnEsc(InputValue value)
@@ -136,7 +138,7 @@ public class Player : Health
 
     void OnJump(InputValue value)
     {
-        if (value.isPressed && isRealGrounded && _jumpCount < maxJumpCount)
+        if (value.isPressed && (isRealGrounded || _jumpCount < maxJumpCount))
         {
             isJumping = true;
             jumpTimer = 0f;
