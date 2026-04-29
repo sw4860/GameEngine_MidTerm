@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4336228076555171007}
   m_Layer: 8
   m_Name: Enemy_Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +115,7 @@ MonoBehaviour:
   attackDelay: 0.5
   PatrolRangeX: 20
   PatrolRangeY: 0
+  isReversed: 0
 --- !u!95 &745206090036651891
 Animator:
   serializedVersion: 7
