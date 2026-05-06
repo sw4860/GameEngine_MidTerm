@@ -5,6 +5,7 @@ public class GravityChangeEnable : ItemAbility
 {
     public override void ApplyAbility(Player player)
     {
+        base.ApplyAbility(player);
         StaticValues.CanGravityChange = true;
     }
 }

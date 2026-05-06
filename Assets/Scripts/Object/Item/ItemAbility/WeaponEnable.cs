@@ -5,6 +5,7 @@ public class WeaponEnable : ItemAbility
 {
     public override void ApplyAbility(Player player)
     {
+        base.ApplyAbility(player);
         StaticValues.CanAttack = true;
     }
 }

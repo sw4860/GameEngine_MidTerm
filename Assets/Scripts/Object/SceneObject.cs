@@ -5,7 +5,7 @@ public class SceneObject : MonoBehaviour
 {
     public string currentSceneName;
     public string nextSceneName;
-    private int score = 0;
+    public int _score = 100;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,8 +13,9 @@ public class SceneObject : MonoBehaviour
         {
             if (!StaticValues.ClearedStageSceneNames.Contains(currentSceneName))
             {
-                score += 100;
-                HighScore.TrySet(SceneManager.GetActiveScene().buildIndex, score);
+                RankPage.Score += _score;
+                HighScore.TrySet(SceneManager.GetActiveScene().buildIndex, RankPage.Score);
+                StageDataSaver.SaveStage(SceneManager.GetActiveScene().buildIndex, RankPage.Score);
                 StaticValues.ClearedStageSceneNames.Add(currentSceneName);
             }
             SceneTransitionManager.Instance.TransitionScene(nextSceneName);

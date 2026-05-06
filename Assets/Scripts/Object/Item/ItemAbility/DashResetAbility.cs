@@ -7,6 +7,7 @@ public class DashResetAbility : ItemAbility
     {
         if (player != null)
         {
+            base.ApplyAbility(player);
             player.lastDashTime = Time.time - player.dashCooldown;
         }
     }

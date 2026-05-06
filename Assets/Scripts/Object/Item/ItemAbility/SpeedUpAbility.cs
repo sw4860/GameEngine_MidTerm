@@ -9,6 +9,7 @@ public class SpeedBoostAbility : ItemAbility
     
     public override void ApplyAbility(Player player)
     {
+        base.ApplyAbility(player);
         player.StartCoroutine(SpeedBoostCoroutine(player));
     }
 
